@@ -1,0 +1,16 @@
+.chatroom, .chatroomContent, .crcMessageList {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.crcMessageList {
+  gap: 5px;
+}
+
+.ownMessage {
+  float: right;
+	clear: right;
+}
+
+.otherMessage {}

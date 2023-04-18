@@ -1,38 +1,276 @@
-.App {
-  text-align: center;
+:root {
+  --main-violet: #8956ff;
+  --main-grey: #d3d3d3;
+  --tea-color: #008080;
+  --primary-color: #0275d8;
+  --success-color: #5cb85c;
+  --info-color: #5bc0de;
+  --warning-color: #f0ad4e;
+  --danger-color: #d9534f;
+  --inverse-color: #292b2c;
+  --faded-color: #f7f7f7;
+  --main-blue: #003580;
+  --light-blue: #0d6efd;
+  --light-red: #ffcccb;
+  --light-yellow: #f7f396;
+  --light-green: #90ee90;
+  --light-violet: #cf9fff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+html {
+  font-size: 14px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+ul, li {
+  list-style-type: none;
+}
+
+h1 {
+  font-size: 24px;
+  letter-spacing: -1px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: var(--main-violet);
+}
+
+.active {
+  color: var(--main-violet);
+}
+
+button:disabled {
+  cursor: not-allowed!important;
+}
+
+.grid {
+  display: grid;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container {
+  width: 1224px;
+  margin: 0 auto;
+  display: flex;
+  padding: 20px;
+}
+
+.spaceContent {
+  height: 40px;
+  width: 1024px;
+  border-left: 1px solid var(--main-grey);
+  border-bottom: 1px solid var(--main-grey);
+}
+
+.pageContent {
+  border-left: 1px solid var(--main-grey);
+  padding: 10px;
+  width: 1024px;
+}
+
+.listContainer {
+}
+
+.listCard {
+  padding: 25px!important;
+}
+
+.listTitle {
+  text-transform: capitalize;
+  font-size: 24px;
+  color: grey;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 1024px;
+}
+
+tr:last-child td {
+  width: 100%;
+}
+
+tr {
+  width: 100%;
+}
+
+th {
+  font-weight: 400;
+  text-align: left;
+}
+
+th > div {
+  border-right: 1px solid var(--main-grey);
+  padding-right: 15px;
+}
+
+th:last-child > div{
+  border: none;
+}
+
+th, td {
+  border: 1px solid var(--main-grey);
+  border-left: none;
+  border-right: none;
+  padding: 10px;
+}
+
+th:first-child,
+td:first-child {
+  border-left: 1px solid var(--main-grey);
+}
+
+th:last-child,
+td:last-child {
+  border-right: 1px solid var(--main-grey);
+}
+
+th:first-child > div,
+td:first-child {
+  width: 23px!important;
+}
+
+th:nth-child(2) > div,
+td:nth-child(2) {
+  width: 210px!important;
+}
+
+/* th:nth-child(3) > div,
+td:nth-child(3) {
+  width: 40px;
+}
+
+th:nth-child(5) > div,
+td:nth-child(5) {
+}
+
+th:nth-child(7) > div,
+td:nth-child(7) {
+  width: 50px;
+}
+
+th:nth-child(9) > div,
+td:nth-child(9) {
+   width: 70px; 
+} */
+
+td {
+  width: fit-content;
+}
+
+.action-btn {
+  margin-right: 10px;
+}
+
+.crListBtn {
+  color: white;
+  border-radius: 5px;
+}
+
+.crListBtn:hover {
+  background-color: white !important;
+  color: var(--main-violet) !important;
+}
+
+.delete {
+  border: 1px solid var(--danger-color);
+  color: var(--danger-color);
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: white;
+}
+
+.delete:hover {
+  background-color: var(--danger-color);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.edit {
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.edit:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.update {
+  border: 1px solid var(--success-color);
+  color: var(--success-color);
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: white;
+}
+
+.update:hover {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.addNew {
+  border: 1px solid var(--success-color);
+  color: var(--success-color);
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: white;
+}
+
+.addNew:hover {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.formControl {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 50px;
+}
+
+textarea {
+  overflow: scroll;
+  font-size: 16px;
+  padding: 5px
+}
+
+select {
+  font-size: 16px;
 }

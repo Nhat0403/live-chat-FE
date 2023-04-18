@@ -1,0 +1,34 @@
+.input-form-control {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+.form-label {
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.form-input {
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border: 1px solid #7f7f7f;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-input input:focus,
+.form-input textarea:focus {
+  outline: none;
+  border-color: var(--main-violet);
+  color: var(--main-violet);
+}
+
+.touched.input-invalid {
+  border-color: red;
+  background-color: var(--light-red);
+}
+
