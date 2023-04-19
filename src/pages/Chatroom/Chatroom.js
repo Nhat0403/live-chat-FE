@@ -13,7 +13,7 @@ const Chatroom = ({ socket }) => {
   const chatroomId = useParams().chatroomId;
   const userId = useSelector((state) => state.Session.userId);
   const token = useSelector((state) => state.Session.token);
-  const [messages, setMessages] = useState([]);
+  const [load, setLoad] = useState([]);
   const [message, setMessage] = useState({
     value: '',
     valid: false,
@@ -62,16 +62,16 @@ const Chatroom = ({ socket }) => {
   useEffect(() => {
     if(socket) {
       console.log(socket);
-      socket.on('newMessage', (message) => {
+      socket.on('receive_message', (message) => {
         console.log(message);
-        setMessages(prev => ({
+        setLoad(prev => ({
           ...prev,
           message
         }));
       });
       getChatroomById();
     };
-  }, [messages]);
+  }, [load]);
 
   const sendMessageHandler = async(e) => {
     e.preventDefault();
@@ -85,7 +85,7 @@ const Chatroom = ({ socket }) => {
       if(socket) {
         console.log('socket');
         console.log(socket);
-        socket.emit('chatroomMessage', {
+        socket.emit('send_message', {
           chatroomId,
           message: message.value
         });
