@@ -9,7 +9,7 @@ import io from 'socket.io-client';
 import Chatroom from './pages/Chatroom/Chatroom';
 
 function App() {
-  const userId = useSelector((state) => state.Session.userId);
+  const userId = localStorage.getItem('userId');
   const token = useSelector((state) => state.Session.token);
   const [socket, setSocket] = useState(null);
 
