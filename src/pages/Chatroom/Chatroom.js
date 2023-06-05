@@ -12,6 +12,7 @@ import { onBlurHandler, onChangeHandler, required } from "../../util/validators"
 const Chatroom = ({ socket }) => {
   const chatroomId = useParams().chatroomId;
   const userId = useSelector((state) => state.Session.userId);
+  console.log(userId);
   const token = useSelector((state) => state.Session.token);
   const [load, setLoad] = useState([]);
   const [message, setMessage] = useState({
